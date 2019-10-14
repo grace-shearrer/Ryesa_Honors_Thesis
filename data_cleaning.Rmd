@@ -3,3 +3,37 @@ title: "Data cleaning"
 output: html_notebook
 ---
 
+# Cleaning up the PEAS data
+
+## Reading in the files
+These are only scored variables
+```{r}
+post<-read.table("~/Google Drive/mentees/Ryesa_stuff/data/SCORES_POST4Ryesa.csv", header=TRUE,sep=",")
+preg<-read.table("~/Google Drive/mentees/Ryesa_stuff/data/SCORES_PREG4Ryesa.csv", header=TRUE, sep=",")
+```
+
+```{r}
+names(post)
+```
+```{r}
+names(preg)
+summary(preg$EC)
+1374-1073
+```
+
+## What variables do we want?
+```{r}
+myvars<-c("PATID","EC","EC_ATTITU", "EC_ACCEPT", "EC_REGUL", "STRESS" )
+```
+
+Missing age 
+Type of delivery
+BF 
+
+Will want ses_preg
+
+
+# Task:
+Create summary tables of all variables and covariates of interest.
+Check normality (histgram graph)
+Make box plot for any factor data (BMI)
